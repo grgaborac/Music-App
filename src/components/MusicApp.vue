@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="songName">
-      <img v-bind:src="songs[0].imgSrc" alt="Artist Picture" class="image" v-if="playing">
+      <img v-bind:src="songs[pl_index].imgSrc" alt="Artist Picture" class="image" v-if="playing">
       <h3 v-if="!playing">Choose a song!</h3>
       <h3 v-else>{{ songPlaying }}</h3>
     </div>
@@ -35,20 +35,23 @@ export default {
       current: {},
       player: new Audio(),
 
-      songs: [{artist: 'Grgo Borac', 
-      name: 'Invicible', 
+      songs: [{artist: 'Alex Figueira', 
+      name: 'Silky', 
       active: false, 
-      src: require('../assets/nikolija.mp3'),
+      src: require('../assets/silky.mp3'),
       imgSrc: require('../assets/f1.jpg')
       },
-      {artist: 'Katja Ivanac', 
-      name: 'Hrvatska', 
+      {artist: 'Caslo', 
+      name: 'Freedom', 
       active: false, 
-      src: require('../assets/mile.mp3')},
-      {artist: 'Ivan Meštrović', 
-      name: 'Bosna', 
+      src: require('../assets/freedom.mp3'),
+      imgSrc: require('../assets/casloimg.jpg')
+      },
+      {artist: 'Jules FK', 
+      name: 'Hello Bob', 
       active: false, 
-      src: require('../assets/luna.mp3')}
+      src: require('../assets/helloBob.mp3'),
+      imgSrc: require('../assets/julesfkimg.jpg')}
       ]
     }
   },
